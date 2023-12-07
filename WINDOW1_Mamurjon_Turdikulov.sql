@@ -15,7 +15,7 @@ WHERE
             (
                 SELECT
                     customer_id,
-                    ROW_NUMBER() OVER (PARTITION BY sales_year ORDER BY total_sales DESC) AS sales_rank
+                    ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY total_sales DESC) AS sales_rank
                 FROM
                     sales
                 WHERE
